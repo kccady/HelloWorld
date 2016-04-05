@@ -1,0 +1,137 @@
+<!DOCTPYE html>
+<script>
+
+var lower = " ";
+var upper = " ";
+var userChoice = " ";
+
+
+function blank() {
+  document.getElementById("printspace").innerHTML = "";
+  document.getElementById("printspace2").innerHTML = "";
+  document.getElementById("printspace3").innerHTML = "";
+}
+
+function start() {
+	document.getElementById("printspace").innerHTML = "";
+  document.getElementById("printspace2").innerHTML = "";
+  document.getElementById("printspace3").innerHTML = "";
+  upper = prompt("ENTER UPPER LIMIT");
+
+  
+  while (isNaN(upper)) {
+    upper = prompt("ENTER UPPER LIMIT");
+}
+
+document.getElementById("printspace").innerHTML += "Your upper limit is " + upper;
+
+getLower();
+}
+
+
+
+
+function getLower() {
+
+lower = prompt("ENTER LOWER LIMIT");
+
+
+while (isNaN(lower)) {
+  lower = prompt("ENTER LOWER LIMIT");
+}
+
+while (lower >= upper) {
+	lower = prompt("LOWER LIMIT MUST BE LESS THAN UPPER LIMIT")
+}
+
+document.getElementById("printspace2").innerHTML += "Your lower limit is " + lower;
+
+getUserChoice();
+}
+
+
+function getUserChoice() {
+userChoice = prompt("ENTER YOUR CHOICE");
+
+while (isNaN(userChoice)) {
+  userChoice = prompt("ENTER YOUR CHOICE");
+}
+
+document.getElementById("printspace3").innerHTML += "Your choice is " + userChoice;
+
+compare();
+}
+
+
+function compare() {
+
+userChoice = parseInt(userChoice);
+upper = parseInt(upper);
+lower = parseInt(lower);
+
+  if (userChoice < upper && userChoice > lower) {
+    alert("YOUR CHOICE IS WITHIN ACCEPTABLE BOUNDARIES, THE PRINCESS IS SAVED");
+  }
+  else if (userChoice >= upper) {
+  	alert("YOUR CHOICE IS TOO HIGH, THE PRINCESS DIED HORRIBLY");
+  }
+  else if (userChoice <= lower) {
+  	alert("YOUR CHOICE IS TOO LOW, THE PRINCESS DIED HORRIBLY");
+  }
+}
+
+
+
+</script>
+
+
+<html>
+<head>
+<link href = "style.css" rel = "stylesheet" type = "text/css">
+</head>
+<body>
+
+<h1>
+SUPER ULTRA MEGA NUMBER COMPARE BROS 3OOO
+</h1>
+
+<div class = "buttons">
+
+  <input type="button" value="start" onclick="start()">
+  <input type="button" value="clear" onclick="blank()">
+  
+</div>
+
+<div id="displays">
+
+<div class="box" id="upperDisplay">
+	<p id="printspace"></p>
+</div>
+
+<div class="box" id="choiceDisplay">
+	<p id="printspace3"></p>
+</div>
+				
+<div class="box" id="lowerDisplay">
+  <p id="printspace2"></p>
+</div>
+
+</div>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
