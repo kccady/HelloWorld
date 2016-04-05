@@ -1,0 +1,13 @@
+img {
+	width:200px;
+	height:200px;
+}
+
+table, td {
+	border: 1px #70b8ff dashed;
+}
+
+body {
+	background-color:#BCD2EE;
+} 
+
